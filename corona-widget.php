@@ -8,8 +8,14 @@
  * Author URI: https://uruba.eu
  * Licence: MIT
  *
- * Text Domain: corona
+ * Text Domain: corona-widget
  *
  * */
 
 defined( 'ABSPATH' ) || exit;
+
+require('src/corona-widget.php');
+
+function init_corona_widget() {
+    add_action('widgets_init', create_function('', 'return register_widget("corona_widget");'));
+}
